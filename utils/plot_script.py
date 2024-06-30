@@ -115,7 +115,10 @@ def plot_3d_motion_v2(motion, kinematic_tree, save_path, interval=50, dataset=No
     fig = plt.figure()
     # ax = fig.add_subplot(111, projection='3d')
     ax = p3.Axes3D(fig)
+    ax = fig.add_subplot(111, projection='3d')
     init()
+
+
 
     data = np.array(motion, dtype=float)
     colors = ['red', 'magenta', 'black', 'green', 'blue']
@@ -124,10 +127,12 @@ def plot_3d_motion_v2(motion, kinematic_tree, save_path, interval=50, dataset=No
     print(data.shape)
 
     def update(index):
-        ax.lines = []
-        ax.collections = []
+
+        for i, line in enumerate(ax.lines):
+            line.remove()
+
         if dataset == "mocap":
-            ax.view_init(elev=110, azim=-90)
+                ax.view_init(elev=110, azim=-90)
         else:
             ax.view_init(elev=110, azim=90)
         for chain, color in zip(kinematic_tree, colors):

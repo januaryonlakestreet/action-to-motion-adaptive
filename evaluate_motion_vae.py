@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
     opt.output_size = input_size
 
-    model = torch.load(model_file_path)
+    model = torch.load(model_file_path,map_location=device)
     prior_net = vae_models.GaussianGRU(opt.input_size, opt.dim_z, opt.hidden_size,
                                        opt.prior_hidden_layers, opt.num_samples, device)
     if opt.use_lie:

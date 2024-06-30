@@ -29,7 +29,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.train_motion_vae">
+  <component name="RunManager" selected="Python.evaluate_motion_vae">
     <configuration name="evaluate_motion_vae" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="action-to-motion-adaptive" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -43,7 +43,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluate_motion_vae.py" />
-      <option name="PARAMETERS" value="--name test1 --dataset_type humanact12  --motion_length 60 --coarse_grained --gpu_id 0 --replic_times 5 --name_ext R0" />
+      <option name="PARAMETERS" value="--name vanila_vae_tf  --dataset_type humanact12  --motion_length 60 --coarse_grained --gpu_id 0 --replic_times 5 --name_ext R0" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -122,8 +122,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.train_motion_vae" />
         <item itemvalue="Python.evaluate_motion_vae" />
+        <item itemvalue="Python.train_motion_vae" />
         <item itemvalue="Python.final_evaluation" />
         <item itemvalue="Python.load_classifier" />
       </list>
@@ -187,6 +187,11 @@
           <url>file://$PROJECT_DIR$/eval_scripts/final_evaluation.py</url>
           <line>158</line>
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/evaluate_motion_vae.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
