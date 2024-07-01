@@ -65,9 +65,9 @@ dataset_opt = {
         'input_size_raw': 72,
         'joints_num': 24,
         'label_dec': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-        'raw_offsets': paramUtil.shihao_raw_offsets,
-        'kinematic_chain': paramUtil.shihao_kinematic_chain,
-        'enumerator': paramUtil.shihao_coarse_action_enumerator,
+        'raw_offsets': paramUtil.humanact12_raw_offsets,
+        'kinematic_chain': paramUtil.humanact12_kinematic_chain,
+        'enumerator': paramUtil.humanact12_action_enumerator,
     },
     
     'ntu_rgbd_vibe': {
@@ -110,7 +110,7 @@ def get_opt(opt_path, num_motions, device):
     opt_dict['num_samples'] = num_motions   # but why?
 
     opt.device = device
-    opt.save_root = os.path.join(opt.checkpoints_dir, opt.dataset_type, opt.name)
+    opt.save_root = os.path.join("."+opt.checkpoints_dir, opt.dataset_type, opt.name)
     opt.model_path = os.path.join(opt.save_root, 'model')
     opt.joints_path = os.path.join(opt.save_root, 'joints')
     opt.model_file_path = os.path.join(opt.model_path, opt.which_epoch + '.tar')

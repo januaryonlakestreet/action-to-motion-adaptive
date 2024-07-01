@@ -42,6 +42,38 @@ class GaussianGRU(nn.Module):
         return z, mu, logvar, h_in
 
 
+class adaptive_instance_norm(nn.Module):
+    def __init__(self, channels, w_dim):
+        super().__init__()
+        self.instance_norm = nn.InstanceNorm1d(channels)
+        self.scale_transform = nn.Linear(w_dim, channels)
+        self.shift_transform = nn.Linear(w_dim, channels)
+
+        self.std_embedded = nn.Linear(96,channels)
+        self.mean_embedded = nn.Linear(96,channels)
+
+
+    def forward(self, content_features, w):
+
+        scale_tensor = self.scale_transform(w)[:, :]
+        shift_tensor = self.shift_transform(w)[:, :]
+
+        w_std = w.std(dim=0)
+        w_mean = w.mean(dim=0)
+
+        w_std = self.std_embedded(w_std)
+        w_mean = self.mean_embedded(w_mean)
+
+        normalized_image = self.instance_norm(content_features)
+
+        normalized_image = w_std * normalized_image + w_mean
+
+
+
+
+        transformed_image = scale_tensor * normalized_image + shift_tensor
+        return transformed_image
+
 class DecoderGRU(nn.Module):
     def __init__(self, input_size, output_size, hidden_size, n_layers, batch_size, device):
         super(DecoderGRU, self).__init__()
@@ -66,6 +98,7 @@ class DecoderGRU(nn.Module):
         return hidden
 
     def forward(self, inputs):
+
         embedded = self.embed(inputs.view(-1, self.input_size))
         h_in = embedded
         for i in range(self.n_layers):

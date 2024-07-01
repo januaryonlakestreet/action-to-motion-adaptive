@@ -66,7 +66,7 @@ if __name__ == "__main__":
         motion_loader = DataLoader(data, batch_size=opt.batch_size, drop_last=True, num_workers=1, shuffle=True)
     else:
         motion_dataset = dataset.MotionDataset(data, opt)
-        motion_loader = DataLoader(motion_dataset, batch_size=opt.batch_size, drop_last=True, num_workers=2, shuffle=True)
+        motion_loader = DataLoader(motion_dataset, batch_size=opt.batch_size, drop_last=True, num_workers=1, shuffle=True)
     opt.pose_dim = input_size
 
     if opt.time_counter:

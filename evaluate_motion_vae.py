@@ -60,7 +60,7 @@ if __name__ == "__main__":
     opt.dim_category = len(label_dec)
 
     opt.pose_dim = input_size
-
+    opt.time_counter = True
     if opt.time_counter:
         opt.input_size = input_size + opt.dim_category + 1
     else:

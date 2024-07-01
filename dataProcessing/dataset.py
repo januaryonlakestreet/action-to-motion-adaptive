@@ -201,7 +201,7 @@ class MotionFolderDatasetNtuVIBE(data.Dataset):
             self.lengths.append(data_mat.shape[0])
         self.cumsum = np.cumsum([0] + self.lengths)
         print("Total number of frames {}, videos {}, action types {}".format(self.cumsum[-1], len(self.data), len(self.labels)))
-        with codecs.open(os.path.join(opt.save_root, "label_enc_rev_ntu_vibe.txt"), 'w', 'utf-8') as f:
+        with codecs.open(os.path.join("."+opt.save_root, "label_enc_rev_ntu_vibe.txt"), 'w', 'utf-8') as f:
             for item in self.label_enc_rev.items():
                 f.write(str(item) + "\n")
 

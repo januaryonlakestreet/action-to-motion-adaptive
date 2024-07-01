@@ -1,7 +1,7 @@
 ------------ Options -------------
 arbitrary_len: False
 batch_size: 128
-checkpoints_dir: ./checkpoints/vae
+checkpoints_dir: ../checkpoints/vae
 clip_set: ./dataset/pose_clip_full.csv
 coarse_grained: True
 d_hidden_layers: 2

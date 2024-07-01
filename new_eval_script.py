@@ -5,7 +5,7 @@ from models.motion_gan import MotionDiscriminator
 
 classifier_model_files = {
     'ntu_rgbd_vibe': './model_file/action_recognition_model_vibe_v2.tar',
-    'humanact12': 'C:/Users/janua/PycharmProjects/motion_gan/action-to-motion-adaptive/model_file/action_recognition_model_humanact12.tar',
+    'humanact12': './model_file/action_recognition_model_humanact12.tar',
     'mocap': './model_file/action_recognition_model_mocap_new.tar'
 }
 
@@ -40,3 +40,11 @@ def load_classifier_for_fid(opt, device):
     classifier.eval()
 
     return classifier
+
+
+
+
+if __name__ == "__main__":
+    model = load_classifier_for_fid("cuda")
+    print("t")
+
