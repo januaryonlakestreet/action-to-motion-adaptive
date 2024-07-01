@@ -1,92 +1,11 @@
 ==================== Replication 0 ====================
-Time: 2024-07-01 13:09:16.879562
----> [ground truth] Accuracy: 0.9973
----> [vanilla_vae_mse_kld01] Accuracy: 0.6880
-Time: 2024-07-01 13:09:27.513667
----> [ground truth] FID: 0.0400
----> [ground truth] Diversity: 6.9524
----> [vanilla_vae_mse_kld01] FID: 17.9005
----> [vanilla_vae_mse_kld01] Diversity: 4.1423
+Time: 2024-07-01 14:37:29.065879
+---> [ground truth] Accuracy: 0.9983
+---> [vanilla_vae_mse_kld01] Accuracy: 0.1613
+Time: 2024-07-01 14:37:38.698228
+---> [ground truth] FID: 0.0646
+---> [ground truth] Diversity: 6.7285
+---> [vanilla_vae_mse_kld01] FID: 25.1106
+---> [vanilla_vae_mse_kld01] Diversity: 3.4616
 ==================== Replication 1 ====================
-Time: 2024-07-01 13:09:43.681718
----> [ground truth] Accuracy: 0.9993
----> [vanilla_vae_mse_kld01] Accuracy: 0.5837
-Time: 2024-07-01 13:09:54.354182
----> [ground truth] FID: 0.0577
----> [ground truth] Diversity: 6.9269
----> [vanilla_vae_mse_kld01] FID: 15.8672
----> [vanilla_vae_mse_kld01] Diversity: 4.8309
-==================== Replication 2 ====================
-Time: 2024-07-01 13:10:10.388122
----> [ground truth] Accuracy: 0.9973
----> [vanilla_vae_mse_kld01] Accuracy: 0.7823
-Time: 2024-07-01 13:10:20.585738
----> [ground truth] FID: 0.0472
----> [ground truth] Diversity: 6.8214
----> [vanilla_vae_mse_kld01] FID: 24.8254
----> [vanilla_vae_mse_kld01] Diversity: 3.3623
-==================== Replication 3 ====================
-Time: 2024-07-01 13:10:37.028516
----> [ground truth] Accuracy: 0.9980
----> [vanilla_vae_mse_kld01] Accuracy: 0.6460
-Time: 2024-07-01 13:10:47.528322
----> [ground truth] FID: 0.0516
----> [ground truth] Diversity: 7.0318
----> [vanilla_vae_mse_kld01] FID: 18.3435
----> [vanilla_vae_mse_kld01] Diversity: 4.6476
-==================== Replication 4 ====================
-Time: 2024-07-01 13:11:04.005446
----> [ground truth] Accuracy: 0.9963
----> [vanilla_vae_mse_kld01] Accuracy: 0.6303
-Time: 2024-07-01 13:11:14.572298
----> [ground truth] FID: 0.0688
----> [ground truth] Diversity: 6.9349
----> [vanilla_vae_mse_kld01] FID: 14.7886
----> [vanilla_vae_mse_kld01] Diversity: 4.7458
-==================== Replication 5 ====================
-Time: 2024-07-01 13:11:31.100148
----> [ground truth] Accuracy: 0.9980
----> [vanilla_vae_mse_kld01] Accuracy: 0.6307
-Time: 2024-07-01 13:11:41.804564
----> [ground truth] FID: 0.0599
----> [ground truth] Diversity: 6.9978
----> [vanilla_vae_mse_kld01] FID: 14.8779
----> [vanilla_vae_mse_kld01] Diversity: 4.6484
-==================== Replication 6 ====================
-Time: 2024-07-01 13:11:58.029215
----> [ground truth] Accuracy: 0.9983
----> [vanilla_vae_mse_kld01] Accuracy: 0.7823
-Time: 2024-07-01 13:12:09.728424
----> [ground truth] FID: 0.0506
----> [ground truth] Diversity: 6.7149
----> [vanilla_vae_mse_kld01] FID: 21.5128
----> [vanilla_vae_mse_kld01] Diversity: 3.7623
-==================== Replication 7 ====================
-Time: 2024-07-01 13:12:26.798374
----> [ground truth] Accuracy: 0.9960
----> [vanilla_vae_mse_kld01] Accuracy: 0.6240
-Time: 2024-07-01 13:12:39.229964
----> [ground truth] FID: 0.0462
----> [ground truth] Diversity: 6.9136
----> [vanilla_vae_mse_kld01] FID: 16.2171
----> [vanilla_vae_mse_kld01] Diversity: 4.5463
-==================== Replication 8 ====================
-Time: 2024-07-01 13:12:56.960102
----> [ground truth] Accuracy: 0.9977
----> [vanilla_vae_mse_kld01] Accuracy: 0.7200
-Time: 2024-07-01 13:13:08.664617
----> [ground truth] FID: 0.0488
----> [ground truth] Diversity: 6.9556
----> [vanilla_vae_mse_kld01] FID: 20.2618
----> [vanilla_vae_mse_kld01] Diversity: 3.9407
-==================== Replication 9 ====================
-Time: 2024-07-01 13:13:26.003143
----> [ground truth] Accuracy: 0.9983
----> [vanilla_vae_mse_kld01] Accuracy: 0.7900
-Time: 2024-07-01 13:13:37.214044
----> [ground truth] FID: 0.0438
----> [ground truth] Diversity: 7.0713
----> [vanilla_vae_mse_kld01] FID: 24.0318
----> [vanilla_vae_mse_kld01] Diversity: 3.6364
-==================== Replication 10 ====================
-Time: 2024-07-01 13:13:55.009253
+Time: 2024-07-01 14:37:55.346963

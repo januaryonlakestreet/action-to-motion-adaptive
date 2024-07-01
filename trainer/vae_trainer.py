@@ -112,7 +112,7 @@ class Trainer(object):
             _, mu_p, logvar_p, _ = prior_net(h)
 
             h_mid = torch.cat((h, z_t), dim=1)
-            x_pred, h_in = decoder(h_mid)
+            x_pred, h_in = decoder(h_mid,h_mid)
 
             # whether to skip the optimization of current time step(not used in our paper)
             is_skip = True if random.random() < self.opt.skip_prob else False
@@ -163,7 +163,7 @@ class Trainer(object):
                 z_t_p, mu_p, logvar_p, h_in_p = prior_net(h)
 
                 h_mid = torch.cat((h, z_t_p), dim=1)
-                x_pred, _ = decoder(h_mid)
+                x_pred, _ = decoder(h_mid,h_mid)
                 prior_vec = x_pred
                 generate_batch.append(x_pred.unsqueeze(1))
 

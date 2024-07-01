@@ -49,8 +49,8 @@ class adaptive_instance_norm(nn.Module):
         self.scale_transform = nn.Linear(w_dim, channels)
         self.shift_transform = nn.Linear(w_dim, channels)
 
-        self.std_embedded = nn.Linear(96,channels)
-        self.mean_embedded = nn.Linear(96,channels)
+        self.std_embedded = nn.Linear(115,channels)
+        self.mean_embedded = nn.Linear(115,channels)
 
 
     def forward(self, content_features, w):
@@ -85,7 +85,8 @@ class DecoderGRU(nn.Module):
         self.device = device
         self.embed = nn.Linear(input_size, hidden_size)
         self.gru = nn.ModuleList([nn.GRUCell(hidden_size, hidden_size) for i in range(self.n_layers)])
-
+        self.adaptive = adaptive_instance_norm(128,115)
+        self.style_embed = nn.Linear(input_size,hidden_size)
         self.output = nn.Linear(hidden_size, output_size)
         self.hidden = self.init_hidden()
 
@@ -97,15 +98,21 @@ class DecoderGRU(nn.Module):
         self.hidden = hidden
         return hidden
 
-    def forward(self, inputs):
+    def forward(self, inputs,style):
 
         embedded = self.embed(inputs.view(-1, self.input_size))
         h_in = embedded
+
+        embedded_style = self.style_embed(style.view(-1, self.input_size))
+        s_in = embedded_style
+
         for i in range(self.n_layers):
             self.hidden[i] = self.gru[i](h_in, self.hidden[i])
+            self.hidden[i] = self.adaptive(self.hidden[i],style)
             h_in = self.hidden[i]
-        return self.output(h_in), h_in
 
+        return self.output(h_in), h_in
+#self.adaptive(self.hidden, torch.full((128, 128), 1.0).float().to('cuda'))
 # generator with Lie algbra parameters, root joint has no rotations
 class DecoderGRULie(DecoderGRU):
     def __init__(self, input_size, output_size, hidden_size, n_layers, batch_size, device):
